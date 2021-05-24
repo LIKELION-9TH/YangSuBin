@@ -55,7 +55,7 @@ ROOT_URLCONF = 'introproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['introproject/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
