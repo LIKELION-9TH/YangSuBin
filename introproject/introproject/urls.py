@@ -20,5 +20,8 @@ from subin import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    path('hobby/', views.hobby, name="hobby"),
+    path('place/', views.place, name="place"),
+    path('music/', views.music, name="music"),
     path('photo/', views.photo, name="photo"),
 ]
