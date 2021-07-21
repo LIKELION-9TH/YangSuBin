@@ -26,8 +26,9 @@
         color: gray;
     }
 
-    .music-container {
-        margin-bottom: 2em;
+    .place-container {
+        display: flex;
+        justify-content: space-between;
     }
 
     .image1 {
@@ -38,6 +39,11 @@
     .text1{
         font-family: 'Pretendard-Regular';
         font-size: 14px;
+    }
+
+    .text2 {
+        font-family: 'Pretendard-Regular';
+        margin: 0;
     }
 
     .image2 {
@@ -55,7 +61,7 @@
         margin-right: 1em;
     }
 
-    .text2 {
+    .text3 {
         font-family: 'Pretendard-Regular';
         margin: 0 1em;
     }
@@ -63,27 +69,38 @@
 </style>
 <div class="mainbox">
     <p>제가 좋아하는 장소는.. 🌄</p>
-    <!-- <h1>1</h1> -->
+    <br>
     <h4>집 🏠</h4>
-    <div class="place-container">
-        <div class="text1">
-            <p>초등학교때부터 소녀시대를 너무 좋아했고 지금까지 계속 좋아하고 있습니다..! <br>그 중에서도 태연을 정말 좋아했는데,<br>최근에는 신곡 weekend를 계속 듣고 있습니다^_^<br></p>
+    <div class="text1">
+        <p>저는 정말 진짜로 집을 너무 좋아합니다🤍<br>하루 나가면 하루는 꼭 쉬어줘야 하는 파워 집순이라<br>집에서 최대 5일동안 안나가본 적도 있습니다..!
+            <br>집을 제외하고 제가 좋아하는 장소를 꼽자면..</p>
+    </div>
+    <br>
+    <hr>
+    <h4>바다 🌊</h4>
+        <div class="text2">
+            <p>제주도, 강릉, 속초, 부산 등등 <br>전부 통틀어 <b>'바다'</b>라는 공간을 굉장히 좋아합니다. 
+                <br>탁트인 바다를 보고있으면 속이 시원하기도 하고 현실에서 벗어난 느낌이 들어서 가고싶다는 생각을 자주 하는 것 같습니다. 
+                <br>바쁘게 일상생활을 하다보면 생각보다 쉽게, 자주 갈 수 없는 곳이기 때문에 
+                <br>아쉬운대로 핸드폰 배경이라도 종종 바다 사진으로 설정해두곤 합니다..</p>
         </div>
-        <div class="image1">
-            <img src="{% static 'music1.JPG'%}" alt="노래1" height="400">
+    <div class="place-container">
+        <div class="place1">
+            <img src="{% static 'place1.JPEG'%}" alt="장소1" height="300">
+        </div>
+        <div class="place2">
+            <img src="{% static 'place2.JPEG'%}" alt="장소2" height="300">
+        </div>
+        <div class="place3">
+            <img src="{% static 'place3.JPEG'%}" alt="장소3" height="300">
+        </div>
+        <div class="place4">
+            <img src="{% static 'place4.JPEG'%}" alt="장소4" height="300">
         </div>
     </div>
 
-    <!-- <h1>2</h1> -->
-    <h4>오락실 사격 🔫</h4>
-    <div class="img-container2">
-        <img src="{% static 'IMG_8863.JPG'%}" alt="사격중" height="400" class="image3">
-        <br>
-        <img src="{% static 'IMG_0000.JPEG' %}" alt="열심히 사격중" height="400" class="image4">
-        <div class="text2">
-            <p>어릴 때부터 오락실이나 놀이공원에 가면 장난감 총 쏘는걸 좋아했는데, 꽤 잘합니다..^_^ <br>놀러갔다가 사격하는 곳이 있어서 인형을 많이 따왔던 기억도 있습니다ㅎㅎ</p>
-        </div>
-    </div>
+
+
 </div>
 
 {% endblock %}
