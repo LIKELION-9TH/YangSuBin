@@ -1,23 +1,133 @@
 {% extends 'base.html' %}
-
-
-
-
+{% load static %}
 
 {% block contents %}
-<!-- <style>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+  
     .nav-masthead .active {
     color: #fff;
     border-bottom-color: #fff;
     }
-</style> -->
-<main class="px-3">
-    <h1>music page입니다</h1>
-</main>
 
-<footer class="mt-auto text-white-50">
-    <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-</footer>
+    .mainbox > p:nth-child(1) {
+        color: gray;
+    }
+
+    .img-container {
+        display: inline-flex;
+        margin: 0 0 2em 0;
+        padding: 0;
+    }
+
+    .image1 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .image2 {
+        display: inline;
+    }
+
+    .img-container2 {
+        display: inline-flex;
+        margin: 0 0 10% 0;
+        padding: 0;
+    }
+
+    .music-container {
+        margin-bottom: 2em;
+    }
+
+    .music-container2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .music-list1, .music-list2, .music-list3, .music-list4, .music-list5 {
+        display: inline-block;
+        width: 300;
+    }
+
+    .title1, .title2, .title3, .title4, .title5 {
+        display: inline;
+        width: 300;
+    }
+
+    .title1 > p, .title2 > p, .title3 > p, .title4 > p, .title5 > p {
+        margin-top: 8px;
+    }
+
+    .image3 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .text1{
+        font-family: 'Pretendard-Regular';
+        font-size: 14px;
+    }
+
+    .text2 {
+        font-family: 'Pretendard-Regular';
+        font-size: 14px;
+        margin-bottom: 10%;
+        margin-top: 1%;
+    }
+
+</style>
+<div class="mainbox">
+    <p>제 좋아하는 음악은.. 🎶</p>
+    <h4><b>태연</b> 노래를 정말 좋아해요! 🎤</h4>
+    <div class="music-container">
+        <div class="text1">
+            <p>초등학교때부터 소녀시대를 너무 좋아했고 지금까지 계속 좋아하고 있습니다..! <br>그 중에서도 태연을 정말 좋아했는데,<br>최근에는 신곡 weekend를 계속 듣고 있습니다^_^<br></p>
+        </div>
+        <div class="image1">
+            <img src="{% static 'music1.JPG'%}" alt="노래1" height="400">
+        </div>
+    </div>
+    <hr>
+    <h4>최근 듣고 있는 플레이리스트 🎧</h4>
+    <div class="music-container2">
+        <div class="music-list1">
+            <img src="{% static 'list1.JPEG'%}" alt="list1" height="240" class="list1">
+            <div class="title1"><p> <b>Don't Say No</b><br>서현(SEOHYUN)</p></div>
+        </div>
+        <div class="music-list2">
+            <img src="{% static 'list2.JPEG'%}" alt="list2" height="240" class="list2">
+            <div class="title2"><p> <b>어푸 (Ah puh)</b><br>아이유</p></div>
+        </div>
+        <div class="music-list3">
+            <img src="{% static 'list3.JPEG'%}" alt="list3" height="240" class="list3">
+            <div class="title3"><p> <b>위로</b><br>권진아</p></div>
+        </div>
+        <div class="music-list4">
+            <img src="{% static 'list4.PNG'%}" alt="list4" height="240" class="list4">
+            <div class="title4"><p> <b>느린 걸음</b><br>윤지온, 남영주</p></div>
+        </div>
+        <div class="music-list5">
+            <img src="{% static 'list5.JPEG'%}" alt="list5" height="240" class="list5">
+            <div class="title5"><p> <b>SO WHAT</b><br>STAYC(스테이씨)</p></div>
+        </div>
+    </div>
+    <div class="text2">
+        <p>최근에는 적당히 신나면서 위로가 되는 노래가 끌리더라구요..! <br>처음 보는 음악이 있다면 다들 한 번씩 들어보세요! 추천드립니다:)</p>
+    </div>
+</div>
 
 
 

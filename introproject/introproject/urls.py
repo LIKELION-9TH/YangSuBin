@@ -24,4 +24,5 @@ urlpatterns = [
     path('place/', views.place, name="place"),
     path('music/', views.music, name="music"),
     path('photo/', views.photo, name="photo"),
+    path('main/', views.main, name="main"),
 ]

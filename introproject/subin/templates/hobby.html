@@ -1,24 +1,95 @@
 {% extends 'base.html' %}
-
-
-
-
+{% load static %}
 
 {% block contents %}
-<!-- <style>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+  
     .nav-masthead .active {
     color: #fff;
     border-bottom-color: #fff;
     }
-</style> -->
-<main class="px-3">
-    <h1>hobby page입니다</h1>
-</main>
 
-<footer class="mt-auto text-white-50">
-    <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-</footer>
+    .mainbox > p:nth-child(1) {
+        color: gray;
+    }
 
+    .img-container {
+        display: inline-flex;
+        margin: 0 0 2em 0;
+        padding: 0;
+    }
 
+    .image1 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .image2 {
+        display: inline;
+    }
+
+    .img-container2 {
+        display: inline-flex;
+        margin: 0 0 10% 0;
+        padding: 0;
+    }
+
+    .image3 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .text1{
+        font-family: 'Pretendard-Regular';
+        margin: 0 1em;
+    }
+
+    .text2 {
+        font-family: 'Pretendard-Regular';
+        margin: 0 1em;
+    }
+
+</style>
+<div class="mainbox">
+    <p>제 취미는.. 🦁</p>
+    <h1>1</h1>
+    <h4>양콩이랑 놀기 🐶</h4>
+    <div class="img-container">
+        <div class="image1">
+            <img src="{% static 'IMG_1128.JPEG'%}" alt="양콩1" height="400">
+        </div>
+        <br>
+        <div class="image2">
+            <img src="{% static 'IMG_2915.JPEG'%}" alt="양콩2" height="400">
+        </div>
+        <div class="text1">
+            <p>저희 집 11살 강아지 양콩입니다. <br> 평소 집순이라 집에서 죽치고 있는 편인데,<br> 그럴 때 항상 콩이가 옆에 있어서<br> 콩이한테 장난을 치거나 <br> 콩이 사진을 찍으면서 놀곤 합니다!</p>
+        </div>
+    </div>
+
+    <h1>2</h1>
+    <h4>오락실 사격 🔫</h4>
+    <div class="img-container2">
+        <img src="{% static 'IMG_8863.JPG'%}" alt="사격중" height="400" class="image3">
+        <br>
+        <img src="{% static 'IMG_0000.JPEG' %}" alt="열심히 사격중" height="400" class="image4">
+        <div class="text2">
+            <p>어릴 때부터 오락실이나 놀이공원에 가면 장난감 총 쏘는걸 좋아했는데, 꽤 잘합니다..^_^ <br>놀러갔다가 사격하는 곳이 있어서 인형을 많이 따왔던 기억도 있습니다ㅎㅎ</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

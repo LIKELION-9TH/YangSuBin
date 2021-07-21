@@ -2,26 +2,39 @@
 {% load static %}
 
 {% block contents %}
-    
+<style>
+  @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  }
 
-      <main class="px-3">
-        <img src="{% static '43210003.JPG'%}" alt="프로필사진" width="400"><br>
-        <br>
-        <h1>안녕하세요:)</h1>
-        <h5>멋쟁이 사자처럼 9기 양수빈입니다.</h5>
-        <p class="lead">제 자기소개 페이지에 오신 것을 환영합니다!<br>취미, 좋아하는 장소, 좋아하는 음악, 내가 찍은 사진을 보실 수 있습니다.</p>
-        <!-- <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">더보기</a>
-        </p> -->
-        <!-- 프로필 사진, 학교, 학년, 가족관계 등등 기본 인적사항 -->
-        <p class="detail">성신여자대학교 19학번<br> 서비스·디자인공학 전공<br>컴퓨터공학 복수전공
-        
-        </p>
-      </main>
+  @font-face {
+    font-family: 'Pretendard-Thin';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+  }
 
-      <footer class="mt-auto text-white-50">
-        <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-      </footer>
+  h5 {
+    font-family: 'Pretendard-Thin';
+  }
 
+  .detail {
+    font-family: 'Pretendard-Thin';
+  }
+
+  .lead {
+    font-family: 'Pretendard-Thin';
+  }
+
+</style>
+<img src="{% static '43210003.JPG'%}" alt="프로필사진" width="600"><br>
+<br>
+<h1>안녕하세요:)</h1>
+<h5>멋쟁이 사자처럼 9기 양수빈입니다.</h5>
+<p class="lead">제 자기소개 페이지에 오신 것을 환영합니다!<br>취미, 좋아하는 장소, 좋아하는 음악, 내가 찍은 사진을 보실 수 있습니다.</p>
+<p class="detail">성신여자대학교 19학번<br> 서비스·디자인공학 전공<br>컴퓨터공학 복수전공</p>
 
 {% endblock %}

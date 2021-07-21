@@ -15,3 +15,6 @@ def music(request):
 
 def photo(request):
     return render(request, "photo.html")
+    
+def main(request):
+    return render(request, "main.html")

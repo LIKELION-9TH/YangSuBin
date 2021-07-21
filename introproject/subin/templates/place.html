@@ -1,24 +1,89 @@
 {% extends 'base.html' %}
-
-
-
-
+{% load static %}
 
 {% block contents %}
-<!-- <style>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+  
     .nav-masthead .active {
     color: #fff;
     border-bottom-color: #fff;
     }
-</style> -->
-<main class="px-3">
-    <h1>place page입니다</h1>
-</main>
 
-<footer class="mt-auto text-white-50">
-    <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-</footer>
+    .mainbox > p:nth-child(1) {
+        color: gray;
+    }
 
+    .music-container {
+        margin-bottom: 2em;
+    }
 
+    .image1 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .text1{
+        font-family: 'Pretendard-Regular';
+        font-size: 14px;
+    }
+
+    .image2 {
+        display: inline;
+    }
+
+    .img-container2 {
+        display: inline-flex;
+        margin: 0 0 10% 0;
+        padding: 0;
+    }
+
+    .image3 {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    .text2 {
+        font-family: 'Pretendard-Regular';
+        margin: 0 1em;
+    }
+
+</style>
+<div class="mainbox">
+    <p>제가 좋아하는 장소는.. 🌄</p>
+    <!-- <h1>1</h1> -->
+    <h4>집 🏠</h4>
+    <div class="place-container">
+        <div class="text1">
+            <p>초등학교때부터 소녀시대를 너무 좋아했고 지금까지 계속 좋아하고 있습니다..! <br>그 중에서도 태연을 정말 좋아했는데,<br>최근에는 신곡 weekend를 계속 듣고 있습니다^_^<br></p>
+        </div>
+        <div class="image1">
+            <img src="{% static 'music1.JPG'%}" alt="노래1" height="400">
+        </div>
+    </div>
+
+    <!-- <h1>2</h1> -->
+    <h4>오락실 사격 🔫</h4>
+    <div class="img-container2">
+        <img src="{% static 'IMG_8863.JPG'%}" alt="사격중" height="400" class="image3">
+        <br>
+        <img src="{% static 'IMG_0000.JPEG' %}" alt="열심히 사격중" height="400" class="image4">
+        <div class="text2">
+            <p>어릴 때부터 오락실이나 놀이공원에 가면 장난감 총 쏘는걸 좋아했는데, 꽤 잘합니다..^_^ <br>놀러갔다가 사격하는 곳이 있어서 인형을 많이 따왔던 기억도 있습니다ㅎㅎ</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
