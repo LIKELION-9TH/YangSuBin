@@ -1,3 +1,4 @@
+# from introproject.subin.views import write
 from django.contrib import admin
 from django.urls import path
 from subin import views
@@ -10,5 +11,7 @@ urlpatterns = [
     path('music/', views.music, name="music"),
     path('photo/', views.photo, name="photo"),
     path('<str:id>', views.detail, name="detail"),
+    path('new/', views.new, name="new"),
+    path('create/', views.create, name="create"),
     path('main/', views.main, name="main"),
 ]
