@@ -8,4 +8,6 @@
     {{photo.pub_date}}
     {{photo.body}}
 
+    <a href="{% url 'edit' photo.id %}">수정할래?</a>
+    <a href="{% url 'delete' photo.id %}">삭제할래?</a>
 {% endblock %}

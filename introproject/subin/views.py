@@ -34,5 +34,23 @@ def create(request):
     new_photo.save()
     return redirect('detail', new_photo.id)
 
+def edit(request, id):
+    edit_photo = Photo.objects.get(id=id)
+    return render(request, 'edit.html', {'photo':edit_photo})
+
+def update(request, id):
+    update_photo = Photo.objects.get(id=id)
+    update_photo.title = request.POST['title']
+    update_photo.writer = request.POST['writer']
+    update_photo.body = request.POST['body']
+    update_photo.pub_date = timezone.now()
+    update_photo.save()
+    return redirect('detail', update_photo.id)
+
+def delete(request, id):
+    delete_photo = Photo.objects.get(id=id)
+    delete_photo.delete()
+    return redirect('photo')
+
 def main(request):
     return render(request, "main.html")
