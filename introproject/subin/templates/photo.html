@@ -7,7 +7,10 @@
     {{photo.title}}
     {{photo.writer}}
     {{photo.summary}}
-    <a href="{% url 'detail' photo.id %}">..더보기..</a>
+    <a href="{% url 'detail' photo.id %}">..더보기..</a><br>
 {% endfor %}
+
+<br>
+<a href="{% url 'new' %}">추가할래?</a>
 
 {% endblock %}
