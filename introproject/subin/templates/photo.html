@@ -1,23 +1,13 @@
 {% extends 'base.html' %}
 
-
-
-
-
 {% block contents %}
-<!-- <style>
-    .nav-masthead .active {
-    color: #fff;
-    border-bottom-color: #fff;
-    }
-</style> -->
+<h3>photo page</h3>
 
-<main class="px-3">
-    <h1>photo page입니다</h1>
-</main>
-
-<footer class="mt-auto text-white-50">
-    <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-</footer>
+{% for photo in photos %}
+    {{photo.title}}
+    {{photo.writer}}
+    {{photo.summary}}
+    <a href="{% url 'detail' photo.id %}">..더보기..</a>
+{% endfor %}
 
 {% endblock %}

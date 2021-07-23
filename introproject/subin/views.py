@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Photo
 
-# Create your views here.
 def home(request):
     return render(request, "home.html")
 
@@ -14,7 +14,12 @@ def music(request):
     return render(request, "music.html")
 
 def photo(request):
-    return render(request, "photo.html")
+    photos = Photo.objects.all()
+    return render(request, "photo.html", {'photos':photos})
+
+def detail(request, id):
+    photo = get_object_or_404(Photo, pk=id)
+    return render(request, "detail.html", {'photo':photo})
     
 def main(request):
     return render(request, "main.html")
