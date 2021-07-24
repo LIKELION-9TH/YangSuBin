@@ -1,20 +1,114 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<h3>photo detail page</h3>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+  
+    .nav-masthead .active {
+    color: #fff;
+    border-bottom-color: #fff;
+    }
 
-    <h2>{{photo.title}}</h2>
-    {{photo.writer}} <br>
-    {{photo.pub_date}}
+    .title {
+        font-family: 'Pretendard-Regular';
+        font-size: 24px;
+        font-weight: 500;
+    }
 
+    .writer {
+        margin: 0;
+        color: gray;
+        font-size: 16px;
+        padding-bottom: 6px;
+    }
+
+    .date {
+        font-size: 14px;
+        color: black;
+    }
+
+    .content {
+        display: block;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+    }
+
+    .photo {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .body {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .mainbox > p:nth-child(1) {
+        color: gray;
+        display: block;
+    }
+
+    .backBtn {
+        color: black;
+        font-size: 14px;
+        display: block;
+    }
+
+    .editBtn {
+        color: black;
+        font-size: 14px;
+        padding: 4px 8px 4px 0;
+        text-decoration-line: none;
+        margin-right: 0.4em;
+    }
+
+    .delBtn {
+        color: gray;
+        font-size: 14px;
+        padding: 4px 8px;
+        text-decoration-line: none;
+    }
+
+</style>
+<div class="mainbox">
+    <p>제가 찍은 사진의 상세 페이지입니다 📷  </p>
+    <a href="{% url 'photo' %}" class="backBtn">목록으로 돌아가기</a>
     <hr>
+
+    <h2 class="title">{{photo.title}}</h2>
+    <p class="writer">{{photo.writer}}</p>
+    <p class="date">{{photo.pub_date}}</p>
     
+    <div class="content">
     {% if photo.image %}
-    <p><img src="{{photo.image.url}}" alt="이미지안뜸" height="300"></p>
+    <img src="{{photo.image.url}}" alt="이미지" width="400" class="photo">
     {% endif %}
 
-    {{photo.body}}
+    <p class="body">{{photo.body}}</p>
+    </div>
 
-    <a href="{% url 'edit' photo.id %}">수정할래?</a>
-    <a href="{% url 'delete' photo.id %}">삭제할래?</a>
+    <br>
+    <a href="{% url 'edit' photo.id %}" class="editBtn">수정하기</a>
+    <a href="{% url 'delete' photo.id %}" class="delBtn">삭제하기</a>
+
+</div>
 {% endblock %}

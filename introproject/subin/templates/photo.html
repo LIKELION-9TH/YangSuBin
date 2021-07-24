@@ -21,6 +21,12 @@
     border-bottom-color: #fff;
     }
 
+    .title {
+        font-family: 'Pretendard-Regular';
+        font-size: 20px;
+        font-weight: 500;
+    }
+
     .mainbox > p:nth-child(1) {
         color: gray;
         display: block;
@@ -54,7 +60,7 @@
         height: 28em;
         display: inline-block;
         margin: 1em 1em 1em 0;
-        padding: 1em 0;
+        padding-bottom: 1em;
     }
 
     .writer {
@@ -86,7 +92,7 @@
     <div class="content">
             {% for photo in photos %}
             <div class="photobox">
-                <h4>{{photo.title}}</h4>
+                <h4 class="title">{{photo.title}}</h4>
                 <p class="writer">{{photo.writer}}</p>
             
                 {% if photo.image %}
