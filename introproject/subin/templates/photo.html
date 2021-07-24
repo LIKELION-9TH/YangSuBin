@@ -1,24 +1,102 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<h3>photo page</h3>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+  
+    .nav-masthead .active {
+    color: #fff;
+    border-bottom-color: #fff;
+    }
 
-{% for photo in photos %}
-<hr>
-    <h2>{{photo.title}}</h2>
-    {{photo.writer}} <br>
-    {{photo.summary}} <br>
-
-    {% if photo.image %}
-        <img src="{{photo.image.url}}" height = 300 alt="메인에서 안떠">
-    {% endif %}
-    <br>
-
-    <a href="{% url 'detail' photo.id %}">..더보기..</a><br><br>
+    .mainbox > p:nth-child(1) {
+        color: gray;
+        display: block;
+    }
     
-{% endfor %}
+    .subtext {
+        font-family: 'Pretendard-Regular';
+        font-size: 14px;
+    }
 
-<br>
-<a href="{% url 'new' %}">추가할래?</a>
+    .addBtn {
+        color: black;
+        font-size: 14px;
+        display: block;
+    }
 
+    .content {
+        display: inline-flex;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+    }
+
+    .photobox {
+        width: 19em;
+        height: 28em;
+        display: inline-block;
+        margin: 1em 1em 1em 0;
+        padding: 1em 0;
+    }
+
+    .writer {
+        margin: 0;
+        color: gray;
+        font-size: 14px;
+        padding-bottom: 6px;
+    }
+
+    .photo {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .moreBtn {
+        color: gray;
+        font-size: 14px;
+        display: block;
+        margin-top: 6px;
+    }
+</style>
+
+<div class="mainbox">
+    <p>제가 찍은 사진입니다 📷  </p>
+    <p class="subtext">사진 찍는걸 좋아하는데, 집에 있는 시간이 많다보니까 대부분이 콩이 사진인 것 같네요..ㅎㅎ 
+        <br>최근에는 필름카메라의 매력에 빠져서 외출할 때 가끔 들고 나가기도 하는데 필름카메라로 찍은 사진도 구경해보세요!</p>
+    <a href="{% url 'new' %}" class="addBtn">사진 추가하기 📸</a>
+    <hr>
+    <div class="content">
+            {% for photo in photos %}
+            <div class="photobox">
+                <h4>{{photo.title}}</h4>
+                <p class="writer">{{photo.writer}}</p>
+            
+                {% if photo.image %}
+                <img src="{{photo.image.url}}" width=280 height=280 alt="photo_image" class="photo">
+                {% endif %}
+                {{photo.summary}}
+                <a href="{% url 'detail' photo.id %}" class="moreBtn">자세히 보기</a><br>
+            </div>
+            {% endfor %}
+            
+    </div>
+</div>
 {% endblock %}
