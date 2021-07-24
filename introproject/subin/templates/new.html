@@ -1,15 +1,54 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<h3>add photo page</h3>
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'Pretendard-Thin';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
 
-<form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    <p>제목: <input type="text" name="title"></p>
-    <p>작성자: <input type="text" name="writer"></p>
-    <p>사진: <input type="file" name="image" accept="image/jpeg, image/jpg" value="{{photo.image}}" required></p>
-    본문: <textarea name="body" id="" cols="30" rows="10"></textarea>
-    <button type="submit">등록</button>
-</form>
+    .mainbox {
+        margin-bottom: 10%;
+    }
+
+    .mainbox > p:nth-child(1) {
+        color: gray;
+        display: block;
+    }
+</style>
+<div class="mainbox">
+    <p>사진을 추가해주세요 ✏️</p>
+    <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">제목</span>
+            <input type="text" name="title" class="form-control" placeholder="title" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">작성자</span>
+            <input type="text" name="writer" class="form-control" placeholder="writer" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input type="file" name="image" class="form-control" id="inputGroupFile02" accept="image/jpeg, image/jpg" required>
+            <label class="input-group-text" for="inputGroupFile02">업로드</label>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">본문</span>
+            <textarea name="body" class="form-control" aria-label="With textarea" id="" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-outline-secondary">추가하기</button>
+    </form>
+</div>
 
 {% endblock %}
