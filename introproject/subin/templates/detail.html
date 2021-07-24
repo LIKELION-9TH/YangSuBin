@@ -6,6 +6,11 @@
     {{photo.title}} <br>
     {{photo.writer}}
     {{photo.pub_date}}
+
+    <hr>
+    {% if photo.image %}
+    <p><img src="{{photo.image.url}}" alt="이미지가 왜 안뜰까?"></p>
+    {% endif %}
     {{photo.body}}
 
     <a href="{% url 'edit' photo.id %}">수정할래?</a>

@@ -7,6 +7,7 @@
     {%csrf_token%}
     <p>제목: <input type="text" name="title" value="{{photo.title}}"></p>
     <p>작성자: <input type="text" name="writer" value="{{photo.writer}}"></p>
+    <p>사진: <input type="file" name="image" value="{{photo.image}}"></p>
     본문: <textarea name="body" id="" cols="30" rows="10" value="{{photo.body}}"></textarea>
     <button type="submit">등록</button>
 </form>
