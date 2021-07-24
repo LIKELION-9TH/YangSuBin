@@ -3,14 +3,16 @@
 {% block contents %}
 <h3>photo detail page</h3>
 
-    {{photo.title}} <br>
-    {{photo.writer}}
+    <h2>{{photo.title}}</h2>
+    {{photo.writer}} <br>
     {{photo.pub_date}}
 
     <hr>
+    
     {% if photo.image %}
-    <p><img src="{{photo.image.url}}" alt="이미지가 왜 안뜰까?"></p>
+    <p><img src="{{photo.image.url}}" alt="이미지안뜸" height="300"></p>
     {% endif %}
+
     {{photo.body}}
 
     <a href="{% url 'edit' photo.id %}">수정할래?</a>

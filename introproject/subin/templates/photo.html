@@ -4,12 +4,18 @@
 <h3>photo page</h3>
 
 {% for photo in photos %}
-    {{photo.title}}
-    {{photo.writer}}
-    {{photo.summary}}
-    {{photo.image}}
-    <img src="{{photo.image.url}}"height = 300>
-    <a href="{% url 'detail' photo.id %}">..더보기..</a><br>
+<hr>
+    <h2>{{photo.title}}</h2>
+    {{photo.writer}} <br>
+    {{photo.summary}} <br>
+
+    {% if photo.image %}
+        <img src="{{photo.image.url}}" height = 300 alt="메인에서 안떠">
+    {% endif %}
+    <br>
+
+    <a href="{% url 'detail' photo.id %}">..더보기..</a><br><br>
+    
 {% endfor %}
 
 <br>

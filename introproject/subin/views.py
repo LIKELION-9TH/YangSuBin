@@ -29,7 +29,7 @@ def create(request):
     new_photo = Photo()
     new_photo.title = request.POST['title']
     new_photo.writer = request.POST['writer']
-    new_photo.image = request.POST['image']
+    new_photo.image = request.FILES['image']
     new_photo.body = request.POST['body']
     new_photo.pub_date = timezone.now()
     new_photo.save()
@@ -44,7 +44,7 @@ def update(request, id):
     update_photo.title = request.POST['title']
     update_photo.writer = request.POST['writer']
     update_photo.image = request.POST['image']
-    update_photo.body = request.POST['body']
+    update_photo.body = request.FILES['body']
     update_photo.pub_date = timezone.now()
     update_photo.save()
     return redirect('detail', update_photo.id)
