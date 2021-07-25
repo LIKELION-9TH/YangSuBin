@@ -31,7 +31,7 @@
           font-style: normal;
         }
 
-        .cnavbar-brand, .nav-item {
+        .cnavbar-brand, .nav-item1, .nav-item2, .nav-item3, .nav-item4 {
           font-family: 'Pretendard-Regular';
         }
 
@@ -45,7 +45,7 @@
           align-items: center;
           justify-content: space-between;
           padding: 0;
-          margin: 0 10%;
+          margin: 2% 10%;
         }
         
         .container-fluid {
@@ -57,7 +57,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">멋쟁이사자처럼 9기 양수빈 🦁</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -66,22 +66,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <!-- <a class="nav-link active" aria-current="page" href="{% url 'hobby' %}">hobby</a> -->
-                        <a class="nav-link" href="{% url 'hobby' %}">Hobby</a>
+                    
+                    <li class="nav-item1">
+                        <a class="nav-link active" href="{% url 'hobby' %}">Hobby</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'music' %}">Music</a>
+                    <li class="nav-item2">
+                        <a class="nav-link active" href="{% url 'music' %}">Music</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'place' %}">Place</a>
+                    <li class="nav-item3">
+                        <a class="nav-link active" href="{% url 'place' %}">Place</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'photo' %}">Photo</a>
+                    <li class="nav-item4">
+                        <a class="nav-link active" href="{% url 'photo' %}">Photo</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
